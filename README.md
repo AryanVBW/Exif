@@ -1,2 +1,3 @@
 # exif-by-aryan 
-by white devil
+by White DEVIL
+CONTACT--KALIFISHING52@GMAIL.COM
