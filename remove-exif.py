@@ -9,7 +9,6 @@
 # python3 -m pip install --upgrade pip
 # python3 -m pip install --upgrade Pillow
 # 2. Add .jpg images downloaded from Flickr to subfolder ./images from where the script is stored. 
-# Try the following Flickr account: https://www.flickr.com/photos/194419969@N07/? (Please don't use other Flickr accounts).
 # Note most social media sites strip exif data from uploaded photos.
 
 
