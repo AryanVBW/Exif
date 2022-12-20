@@ -25,6 +25,6 @@ A Exif-Images edition , powered by *Aryan*
         -  `su -c "yum install python"`
     - Windows 
         -Coming soon
- - git clone 
- - cd WIFIjam
+ - git clone https://github.com/AryanVBW/Exif.git
+ - cd 
  - python3 
