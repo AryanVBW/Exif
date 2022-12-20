@@ -1,7 +1,7 @@
 # Exif-Photo by WhiteDevil----*Aryan*
 <p align="center">
 <img src="https://github.com/ARYAN122333/L3MON/blob/main/logo.png" height="60"><br>
-A WIFi Jamer , powered by *Aryan*
+A Exif-Images edition , powered by *Aryan*
 </p>
 
 
@@ -25,6 +25,6 @@ A WIFi Jamer , powered by *Aryan*
         -  `su -c "yum install python"`
     - Windows 
         -Coming soon
- - git clone https://github.com/AryanVBW/WIFIjam.git
+ - git clone 
  - cd WIFIjam
- - python3 wifi1.py / wifi2.py
+ - python3 
