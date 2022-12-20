@@ -26,5 +26,5 @@ A Exif-Images edition , powered by *Aryan*
     - Windows 
         -Coming soon
  - git clone https://github.com/AryanVBW/Exif.git
- - cd 
- - python3 
+ - cd Exif
+ - python3 exif.py
