@@ -4,7 +4,7 @@
 A Exif-Images edition , powered by *Aryan*
 </p>
 <p align="center">
-<img src="https://github.com/AryanVBW/Exif/releases/download/Exif/ExIF-Logo_BackgroundWhite.png" height="60"><br>
+<img src="https://github.com/AryanVBW/Exif/releases/download/Exif/ExIF-Logo_BackgroundWhite.png" height="100"><br>
 A Exif-Images edition ヴィベク 
 </p>
 
