@@ -13,7 +13,7 @@ A Exif-Images edition ヴィベク
 ## Features
 - Extract exif data of images jpg,jpeg,png.
 - Clear exif data of images 
-- And many more like save dada in text file
+- And many more like save data in text file
 
 ## Prerequisites 
  - python3
