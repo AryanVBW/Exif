@@ -1,6 +1,6 @@
 
 <p align="center">
-<img src="https://github.com/AryanVBW/kali-Linux-Android/releases/download/1/removebackground.png" height="60"><br>
+<img src="https://github.com/AryanVBW/kali-Linux-Android/releases/download/1/removebackground.png" height="100"><br>
 A Exif-Images edition , powered by *Aryan*
 </p>
 <p align="center">
