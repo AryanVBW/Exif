@@ -21,14 +21,16 @@ A Exif-Images Edition
 
 ## Installation 
 1. Install python3
-    - Debian, Ubuntu, Etc
+ - Debian, Ubuntu, Etc
         - `sudo apt-get install python3`
-    - Fedora, Oracle, Red Hat, etc
+ - Fedora, Oracle, Red Hat, etc
         -  `su -c "yum install python"`
-    - Windows 
-        -Coming soon
+ - Windows 
+      -Coming soon
+## copy & paste the  following commands.
 ```bash
  git clone https://github.com/AryanVBW/Exif.git
  cd Exif
+ mkdir images
  python3 exif.py
 ```
