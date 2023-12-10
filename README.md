@@ -21,6 +21,11 @@
         -  `su -c "yum install python"`
  - Windows 
       - python for windows [click here](https://www.python.org/downloads/windows/)
+- 2. Install Pillow (Pillow will not work if you have PIL installed):
+ ```bash 
+  python3 -m pip install --upgrade pip
+  python3 -m pip install --upgrade Pillow
+ ```
 # Installation 
 ## copy & paste the  following commands.
 ```bash
