@@ -39,7 +39,12 @@
 ```bash
 git clone https://github.com/AryanVBW/Exif.git
 cd Exif
-python3 exif.py
+python3 exif-main.py
+```
+
+### To remove exif data from images, use the following command:
+```bash
+python3 remove-exif.py
 ```
 ### use this commands: for print jpg output directly on terminal or power shell 
 ```bash
@@ -47,8 +52,3 @@ git clone https://github.com/AryanVBW/Exif.git
 cd Exif
 python3 exif.py
 ```
-### To remove exif data from images, use the following command:
-```bash
-python3 remove-exif.py
-```
-
