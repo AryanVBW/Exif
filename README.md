@@ -33,3 +33,5 @@
  cd Exif
  python3 exif.py
 ```
+## for remove exif data from images  use following comand 
+    `python3               '
