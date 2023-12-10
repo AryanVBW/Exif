@@ -22,22 +22,17 @@ A Exif-Images Edition
 - 2. Add .jpg to subfolder ./images from where the script is stored. 
 - Note most social media sites strip exif data from uploaded photos.
 ## Prerequisites 
- - python3
-    - See [installation](#Installation) for OS specifics
- - python
-
-## Installation 
 1. Install python3
  - Debian, Ubuntu, Etc
         - `sudo apt-get install python3`
  - Fedora, Oracle, Red Hat, etc
         -  `su -c "yum install python"`
  - Windows 
-      -Coming soon
+      - python for windows [click here](https://www.python.org/downloads/windows/)
+# Installation 
 ## copy & paste the  following commands.
 ```bash
  git clone https://github.com/AryanVBW/Exif.git
  cd Exif
- mkdir images
  python3 exif.py
 ```
