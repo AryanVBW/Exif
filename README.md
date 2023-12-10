@@ -1,6 +1,6 @@
 <p align="center">
 <img src="https://github.com/AryanVBW/Exif/releases/download/Exif/ExIF-Logo_BackgroundWhite.png" height="200">
-A Exif-Images Edition
+  A Exif-Images Edition
 </p>
 
 ## Features
