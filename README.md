@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/AryanVBW/Exif/releases/download/Exif/ExIF-Logo_BackgroundWhite.png" height="200">
+<img src="https://github.com/AryanVBW/Exif/releases/download/Exif/ExIF-Logo_BackgroundWhite.png" height="200"><br>
   A Exif-Images Edition
 </p>
 
