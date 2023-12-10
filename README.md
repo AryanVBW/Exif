@@ -1,6 +1,6 @@
 
 <p align="center">
-<img src="https://github.com/AryanVBW/kali-Linux-Android/releases/download/1/removebackground.png" height="100"><br>
+<img src="https://github.com/AryanVBW/kali-Linux-Android/releases/download/1/removebackground.png" height="100">
 
 </p>
 <p align="center">
