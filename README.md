@@ -13,7 +13,16 @@ A Exif-Images Edition
 - Extract exif data of images jpg,jpeg,png.
 - Clear exif data of images 
 - And many more like save data in text file
-
+# Please note: 
+# This program is for .JPG and .TIFF format files. The program could be extended to support .HEIC, .PNG and other formats.
+# Installation and usage instructions:
+- 1. Install Pillow (Pillow will not work if you have PIL installed):
+ ```bash 
+  python3 -m pip install --upgrade pip
+  python3 -m pip install --upgrade Pillow
+ ```
+- 2. Add .jpg to subfolder ./images from where the script is stored. 
+- Note most social media sites strip exif data from uploaded photos.
 ## Prerequisites 
  - python3
     - See [installation](#Installation) for OS specifics
