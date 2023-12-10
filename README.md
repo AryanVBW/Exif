@@ -8,10 +8,11 @@
 - Extract exif data of images jpg, jpeg, png.
 - Clear exif data of images.
 - Save data in a text file.
-
-## Please note:
-This program is for .JPG and .TIFF format files. The program could be extended to support .HEIC, .PNG, and other formats.
-
+## Supported Formats
+ - **Images**: PNG, JPG, JPEG, GIF, BMP, TIFF
+ - **Videos**: MP4, MKV, AVI, MOV
+ - **Audio**: MP3 (limited support, additional library may be required)
+ - OutputThe script will display metadata information for each file.If the output is set to a file, the results will be saved in exif_data.txt.
 ## Installation and usage instructions:
 - Add .jpg to subfolder ./images from where the script is stored. 
 - Note: Most social media sites strip exif data from uploaded photos.
