@@ -27,6 +27,8 @@ A Exif-Images Edition
         -  `su -c "yum install python"`
     - Windows 
         -Coming soon
- - git clone https://github.com/AryanVBW/Exif.git
- - cd Exif
- - python3 exif.py
+```bash
+ git clone https://github.com/AryanVBW/Exif.git
+ cd Exif
+ python3 exif.py
+```
