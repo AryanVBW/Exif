@@ -1,7 +1,6 @@
 
 <p align="center">
 <img src="https://github.com/AryanVBW/kali-Linux-Android/releases/download/1/removebackground.png" height="100">
-
 </p>
 <p align="center">
 <img src="https://github.com/AryanVBW/Exif/releases/download/Exif/ExIF-Logo_BackgroundWhite.png" height="200"><br>
