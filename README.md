@@ -34,4 +34,4 @@
  python3 exif.py
 ```
 ## for remove exif data from images  use following comand 
-    `python3               '
+    python3 remove-exif.py 
