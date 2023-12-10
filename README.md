@@ -48,6 +48,20 @@ python3 exif-main.py
 ```bash
 python3 remove-exif.py
 ```
+## 📸🎥🔍 direct use 
+
+Discover the hidden details in your media files effortlessly! Simply run this script and:
+
+  - 🌐 Enter the path to your images, videos, or audio files.
+  - 💾 Choose where to save the extracted Exif data.
+
+Unearth the metadata magic with style!
+### copy paste this 
+```bash
+git clone https://github.com/AryanVBW/Exif.git
+cd Exif
+python3 exif-rae.py
+```
 ### use this commands: for print jpg output directly on terminal or power shell 
 ```bash
 git clone https://github.com/AryanVBW/Exif.git
