@@ -68,3 +68,7 @@ git clone https://github.com/AryanVBW/Exif.git
 cd Exif
 python3 exif.py
 ```
+<p align="center"> 
+  Visitor count<br>
+  <img src="https://profile-counter.glitch.me/Aryanvbw/count.svg" />
+</p>
