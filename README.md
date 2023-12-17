@@ -60,7 +60,7 @@ Unearth the metadata magic with style!
 ```bash
 git clone https://github.com/AryanVBW/Exif.git
 cd Exif
-python3 exif-rae.py
+python3 exif-raw.py
 ```
 ### use this commands: for print jpg output directly on terminal or power shell 
 ```bash
