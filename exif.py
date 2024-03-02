@@ -1,6 +1,6 @@
 # Disclaimer: This script is for educational purposes only.  
 # Do not use against any photos that you don't own or have authorization to test. 
-
+# ©2024 vivek w 
 #!/usr/bin/env python3
 
 # Please note: 
@@ -46,7 +46,7 @@ print("""
  _ _ _ _ _ _ _ _ _ _ _ / ____ \| |  | |_| | (_| | | | |_ _ _ _ _ _ _ _ _ _ _ _ 
 (_|_|_|_|_|_|_|_|_|_|_)_/    \_\_|   \__, |\__,_|_| |_(_|_|_|_|_|_|_|_|_|_|_|_)
                                       __/ |                                    
-                                     |___/ by WhiteDevil 
+                                     |___/ by Vivek W 
                                      """)
 
 
