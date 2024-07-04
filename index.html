@@ -39,6 +39,12 @@
     border-radius: 5px;
     transition: background-color 0.3s ease;
   }
+  .copy-btn.copied {
+    background-color: #28a745;
+  }
+  .copy-btn.copied::after {
+    content: "Copied";
+  }
   .copy-btn:hover {
     background-color: #0056b3;
   }
@@ -93,17 +99,16 @@
   <ol>
     <li>Install Python3
       <ul>
-        <li>Debian, Ubuntu, Etc: <code>sudo apt-get install python3</code></li>
-        <li>Fedora, Oracle, Red Hat, etc: <code>su -c "yum install python"</code></li>
+        <li>Debian, Ubuntu, Etc: <code><button class="copy-btn" onclick="copyToClipboard('#install-python')">Copy</button>sudo apt-get install python3</code></li>
+        <li>Fedora, Oracle, Red Hat, etc: <code><button class="copy-btn" onclick="copyToClipboard('#install-yum')">Copy</button>su -c "yum install python"</code></li>
         <li>Windows: <a href="https://www.python.org/downloads/windows/">Python for Windows</a></li>
       </ul>
     </li>
     <li>Install Pillow (Pillow will not work if you have PIL installed):
-      <pre><code>python3 -m pip install --upgrade pip
+      <pre><code><button class="copy-btn" onclick="copyToClipboard('#upgrade-pip')">Copy</button>python3 -m pip install --upgrade pip
 python3 -m pip install --upgrade Pillow
 pip install Pillow moviepy
-pip install eyed3
-      </code></pre>
+pip install eyed3</code></pre>
     </li>
   </ol>
 
@@ -153,14 +158,17 @@ python3 exif.py</code></pre>
 </div>
 
 <script>
-  function copyToClipboard(element) {
-    var copyText = document.querySelector(element);
-    var range = document.createRange();
-    range.selectNode(copyText);
-    window.getSelection().removeAllRanges();
-    window.getSelection().addRange(range);
-    document.execCommand("copy");
-    window.getSelection().removeAllRanges();
+  function copyToClipboard(elementId) {
+    var copyText = document.querySelector(elementId).innerText;
+    navigator.clipboard.writeText(copyText).then(function() {
+      var copyButton = document.querySelector(elementId).parentNode.querySelector('.copy-btn');
+      copyButton.classList.add('copied');
+      setTimeout(function() {
+        copyButton.classList.remove('copied');
+      }, 2000);
+    }, function(err) {
+      console.error('Failed to copy: ', err);
+    });
   }
 </script>
 
