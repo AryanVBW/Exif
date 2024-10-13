@@ -8,7 +8,7 @@
   body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f0f0f0;
+    background-color:whitesmoke;
     margin: 0;
     padding: 0;
     display: flex;
@@ -18,13 +18,42 @@
   }
   .container {
     max-width: 800px;
-    background-color: #fff;
+    background: #AFDDE5;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  .logo {
+    display: block;
+    margin: 0 auto;
+    max-height: 200px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+  }
+  h2, h3 {
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  hr {
+    border: none;
+    border-top: 2px solid #333;
+    margin: 20px 0;
+  }
+  ul, ol {
+    margin-left: 20px;
+    padding-left: 10px;
+  }
+  ul li, ol li {
+    margin-bottom: 8px;
   }
   .code-block {
     position: relative;
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 8px;
     margin-bottom: 20px;
   }
   .copy-btn {
@@ -50,13 +79,14 @@
   }
   .center {
     text-align: center;
-  }
-  .logo {
-    max-height: 200px;
+    margin-top: 20px;
   }
   .animated-text {
     font-size: 24px;
-    animation: color-change 10s infinite alternate;
+    font-weight: bold;
+    animation: color-change 5s infinite alternate;
+    margin-top: 20px;
+    display: block;
   }
   @keyframes color-change {
     0% {
@@ -66,54 +96,94 @@
       color: #ff6347;
     }
   }
+  /* Floating image */
+  .floating-image {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+  }
+  .floating-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* Responsive for small screens */
+  @media (max-width: 600px) {
+    .container {
+      padding: 15px;
+    }
+    .logo {
+      max-height: 150px;
+    }
+    .animated-text {
+      font-size: 20px;
+    }
+  }
 </style>
 </head>
 <body>
+
 <div class="container">
   <p class="center">
-    <img class="logo" src="https://github.com/AryanVBW/Exif/releases/download/Exif/ExIF-Logo_BackgroundWhite.png" height="200"><br>
-    <span class="animated-text">A Exif-Images Edition</span>
+    <img class="logo" src="https://github.com/AryanVBW/Exif/releases/download/Exif/ExIF-Logo_BackgroundWhite.png" alt="Exif Logo">
+    <span class="animated-text">Exif-Images Edition</span>
   </p>
+  <hr>
 
   <h2>Features</h2>
-  <ul>
-    <li>Extract exif data of images jpg, jpeg, png.</li>
-    <li>Clear exif data of images.</li>
-    <li>Save data in a text file.</li>
-  </ul>
+  <hr>
+
+    <ul>
+      <li>Extract exif data of images (jpg, jpeg, png).</li>
+      <li>Clear exif data from images.</li>
+      <li>Save data in a text file.</li>
+    </ul>
 
   <h2>Supported Formats</h2>
-  <ul>
-    <li>Images: PNG, JPG, JPEG, GIF, BMP, TIFF</li>
-    <li>Videos: MP4, MKV, AVI, MOV</li>
-    <li>Audio: MP3 (limited support, additional library may be required)</li>
-  </ul>
+  <hr>
+  
+    <ul>
+      <li>Images: PNG, JPG, JPEG, GIF, BMP, TIFF</li>
+      <li>Videos: MP4, MKV, AVI, MOV</li>
+      <li>Audio: MP3 (limited support, additional library may be required)</li>
+    </ul>
+
 
   <h2>Installation and Usage Instructions</h2>
-  <ol>
-    <li>Add .jpg to subfolder ./images from where the script is stored.</li>
-    <li>Note: Most social media sites strip exif data from uploaded photos.</li>
-  </ol>
+  <hr>
+  
+    <ol>
+      <li>Add .jpg to subfolder ./images from where the script is stored.</li>
+      <li>Note: Most social media sites strip exif data from uploaded photos.</li>
+    </ol>
 
   <h3>Prerequisites</h3>
-  <ol>
-    <li>Install Python3
-      <ul>
-        <li>Debian, Ubuntu, Etc: <code><button class="copy-btn" onclick="copyToClipboard('#install-python')">Copy</button>sudo apt-get install python3</code></li>
-        <li>Fedora, Oracle, Red Hat, etc: <code><button class="copy-btn" onclick="copyToClipboard('#install-yum')">Copy</button>su -c "yum install python"</code></li>
-        <li>Windows: <a href="https://www.python.org/downloads/windows/">Python for Windows</a></li>
-      </ul>
-    </li>
-    <li>Install Pillow (Pillow will not work if you have PIL installed):
-      <pre><code><button class="copy-btn" onclick="copyToClipboard('#upgrade-pip')">Copy</button>python3 -m pip install --upgrade pip
+  <hr>
+  
+      <li>Install Python3
+        <ul>
+          <li>Debian, Ubuntu, Etc: <code>sudo apt-get install python3</code></li>
+          <li>Fedora, Oracle, Red Hat, etc: <code>su -c "yum install python"</code></li>
+          <li>Windows: <a href="https://www.python.org/downloads/windows/">Python for Windows</a></li>
+        </ul>
+      </li>
+      <li>Install Pillow (Pillow will not work if you have PIL installed):
+        <pre><code>python3 -m pip install --upgrade pip
 python3 -m pip install --upgrade Pillow
 pip install Pillow moviepy
 pip install eyed3</code></pre>
-    </li>
-  </ol>
+      </li>
+    </ol>
 
   <h2>Installation</h2>
-  <h3>Copy &amp; paste the following commands:</h3>
+  <hr>
+  <h3>Copy & paste the following commands:</h3>
   <div class="code-block">
     <button class="copy-btn" onclick="copyToClipboard('#install-commands')">Copy</button>
     <pre id="install-commands"><code>git clone https://github.com/AryanVBW/Exif.git
@@ -128,6 +198,7 @@ python3 exif-main.py</code></pre>
   </div>
 
   <h2>📸🎥🔍 Direct Use</h2>
+  <hr>
   <p>Discover the hidden details in your media files effortlessly! Simply run this script and:</p>
   <ul>
     <li>🌐 Enter the path to your images, videos, or audio files.</li>
@@ -157,20 +228,12 @@ python3 exif.py</code></pre>
   </p>
 </div>
 
+<!-- Floating image -->
+<div class="floating-image">
+  <img src="https://github.com/AryanVBW/Exif/releases/download/Exif/ExIF-Logo_BackgroundWhite.png" alt="Floating Logo">
+</div>
+
 <script>
   function copyToClipboard(elementId) {
     var copyText = document.querySelector(elementId).innerText;
-    navigator.clipboard.writeText(copyText).then(function() {
-      var copyButton = document.querySelector(elementId).parentNode.querySelector('.copy-btn');
-      copyButton.classList.add('copied');
-      setTimeout(function() {
-        copyButton.classList.remove('copied');
-      }, 2000);
-    }, function(err) {
-      console.error('Failed to copy: ', err);
-    });
-  }
-</script>
-
-</body>
-</html>
+    navigator.clip
