@@ -1,131 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Exif Images Edition</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color:whitesmoke;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-  .container {
-    max-width: 800px;
-    background: #AFDDE5;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    position: relative;
-  }
-  .logo {
-    display: block;
-    margin: 0 auto;
-    max-height: 200px;
-    border-radius: 50%;
-    box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
-  }
-  h2, h3 {
-    text-align: center;
-    color: #333;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  hr {
-    border: none;
-    border-top: 2px solid #333;
-    margin: 20px 0;
-  }
-  ul, ol {
-    margin-left: 20px;
-    padding-left: 10px;
-  }
-  ul li, ol li {
-    margin-bottom: 8px;
-  }
-  .code-block {
-    position: relative;
-    background-color: whitesmoke;
-    padding: 10px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-  }
-  .copy-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  .copy-btn.copied {
-    background-color: #28a745;
-  }
-  .copy-btn.copied::after {
-    content: "Copied";
-  }
-  .copy-btn:hover {
-    background-color: #0056b3;
-  }
-  .center {
-    text-align: center;
-    margin-top: 20px;
-  }
-  .animated-text {
-    font-size: 24px;
-    font-weight: bold;
-    animation: color-change 5s infinite alternate;
-    margin-top: 20px;
-    display: block;
-  }
-  @keyframes color-change {
-    0% {
-      color: #007bff;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exif Images Edition</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: rgb(255, 255, 255);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
-    100% {
-      color: #ff6347;
-    }
-  }
-  /* Floating image */
-  .floating-image {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 100px;
-    height: 100px;
-    background-color: #fff;
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    overflow: hidden;
-  }
-  .floating-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  /* Responsive for small screens */
-  @media (max-width: 600px) {
     .container {
-      padding: 15px;
+      max-width: 800px;
+      background: #c7b8b8;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+      position: relative;
     }
     .logo {
-      max-height: 150px;
+
+      display: block;
+      margin: 0 auto;
+      max-height: 200px;
+      border-radius: 50%;
+      box-shadow: 0px 0px 15px rgba(60, 198, 129, 0.5);
+    }
+    h2, h3 {
+      text-align: center;
+      color: #446d15;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    hr {
+      border: none;
+      border-top: 2px solid #7e7c7c;
+      margin: 20px 0;
+    }
+    ul, ol {
+      margin-left: 20px;
+      padding-left: 10px;
+      color:white
+    }
+    ul li, ol li {
+     color:white;
+      margin-bottom: 8px;
+    }
+    .code-block {
+      position: relative;
+      background-color: whitesmoke;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #8795a3;
+      color: #000000;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .copy-btn.copied {
+      background-color: #c4ccc6;
+    }
+    .copy-btn.copied::after {
+      content: "Copied";
+    }
+    .copy-btn:hover {
+      background-color: #000000;
+    }
+    .center {
+      text-align: center;
+      margin-top: 20px;
     }
     .animated-text {
-      font-size: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      animation: color-change 5s infinite alternate;
+      margin-top: 20px;
+      display: block;
     }
-  }
-</style>
+    @keyframes color-change {
+      0% {
+        color: #007bff;
+      }
+      100% {
+        color: #ff6347;
+      }
+    }
+    .floating-image {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 100px;
+      height: 100px;
+      background-color: #f8f8f8;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      overflow: hidden;
+    }
+    .floating-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 15px;
+      }
+      .logo {
+        max-height: 150px;
+      }
+      .animated-text {
+        font-size: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -138,48 +139,42 @@
 
   <h2>Features</h2>
   <hr>
-
-    <ul>
-      <li>Extract exif data of images (jpg, jpeg, png).</li>
-      <li>Clear exif data from images.</li>
-      <li>Save data in a text file.</li>
-    </ul>
+  <ul>
+    <li>Extract exif data of images (jpg, jpeg, png).</li>
+    <li>Clear exif data from images.</li>
+    <li>Save data in a text file.</li>
+  </ul>
 
   <h2>Supported Formats</h2>
   <hr>
-  
-    <ul>
-      <li>Images: PNG, JPG, JPEG, GIF, BMP, TIFF</li>
-      <li>Videos: MP4, MKV, AVI, MOV</li>
-      <li>Audio: MP3 (limited support, additional library may be required)</li>
-    </ul>
-
+  <ul>
+    <li>Images: PNG, JPG, JPEG, GIF, BMP, TIFF</li>
+    <li>Videos: MP4, MKV, AVI, MOV</li>
+    <li>Audio: MP3 (limited support, additional library may be required)</li>
+  </ul>
 
   <h2>Installation and Usage Instructions</h2>
   <hr>
-  
-    <ol>
-      <li>Add .jpg to subfolder ./images from where the script is stored.</li>
-      <li>Note: Most social media sites strip exif data from uploaded photos.</li>
-    </ol>
+  <ol>
+    <li>Add .jpg to subfolder ./images from where the script is stored.</li>
+    <li>Note: Most social media sites strip exif data from uploaded photos.</li>
+  </ol>
 
   <h3>Prerequisites</h3>
   <hr>
-  
-      <li>Install Python3
-        <ul>
-          <li>Debian, Ubuntu, Etc: <code>sudo apt-get install python3</code></li>
-          <li>Fedora, Oracle, Red Hat, etc: <code>su -c "yum install python"</code></li>
-          <li>Windows: <a href="https://www.python.org/downloads/windows/">Python for Windows</a></li>
-        </ul>
-      </li>
-      <li>Install Pillow (Pillow will not work if you have PIL installed):
-        <pre><code>python3 -m pip install --upgrade pip
+  <li>Install Python3</li>
+    <ul>
+      <li>Debian, Ubuntu, Etc: <code>sudo apt-get install python3</code></li>
+      <li>Fedora, Oracle, Red Hat, etc: <code>su -c "yum install python"</code></li>
+      <li>Windows: <a href="https://www.python.org/downloads/windows/">Python for Windows</a></li>
+    </ul>
+  </li>
+  <li>Install Pillow (Pillow will not work if you have PIL installed):
+    <pre><code>python3 -m pip install --upgrade pip
 python3 -m pip install --upgrade Pillow
 pip install Pillow moviepy
 pip install eyed3</code></pre>
-      </li>
-    </ol>
+  </li>
 
   <h2>Installation</h2>
   <hr>
@@ -207,7 +202,8 @@ python3 exif-main.py</code></pre>
   <p>Unearth the metadata magic with style!</p>
 
   <h3>Copy and paste this:</h3>
-  <div class="code-block">
+  <div  class="code-block">
+    
     <button class="copy-btn" onclick="copyToClipboard('#direct-use-commands')">Copy</button>
     <pre id="direct-use-commands"><code>git clone https://github.com/AryanVBW/Exif.git
 cd Exif
@@ -236,4 +232,17 @@ python3 exif.py</code></pre>
 <script>
   function copyToClipboard(elementId) {
     var copyText = document.querySelector(elementId).innerText;
-    navigator.clip
+    navigator.clipboard.writeText(copyText).then(function() {
+      var button = document.querySelector('.copy-btn');
+      button.classList.add('copied');
+      setTimeout(function() {
+        button.classList.remove('copied');
+      }, 2000);
+    }, function(err) {
+      console.error('Could not copy text: ', err);
+    });
+  }
+</script>
+
+</body>
+</html>
