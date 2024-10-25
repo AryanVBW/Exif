@@ -1,248 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exif Images Edition</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: rgb(255, 255, 255);
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-    .container {
-      max-width: 800px;
-      background: #c7b8b8;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
-      position: relative;
-    }
-    .logo {
-
-      display: block;
-      margin: 0 auto;
-      max-height: 200px;
-      border-radius: 50%;
-      box-shadow: 0px 0px 15px rgba(60, 198, 129, 0.5);
-    }
-    h2, h3 {
-      text-align: center;
-      color: #446d15;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-    hr {
-      border: none;
-      border-top: 2px solid #7e7c7c;
-      margin: 20px 0;
-    }
-    ul, ol {
-      margin-left: 20px;
-      padding-left: 10px;
-      color:white
-    }
-    ul li, ol li {
-     color:white;
-      margin-bottom: 8px;
-    }
-    .code-block {
-      position: relative;
-      background-color: whitesmoke;
-      padding: 10px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
-    .copy-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background-color: #8795a3;
-      color: #000000;
-      border: none;
-      padding: 5px 10px;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-    .copy-btn.copied {
-      background-color: #c4ccc6;
-    }
-    .copy-btn.copied::after {
-      content: "Copied";
-    }
-    .copy-btn:hover {
-      background-color: #000000;
-    }
-    .center {
-      text-align: center;
-      margin-top: 20px;
-    }
-    .animated-text {
-      font-size: 24px;
-      font-weight: bold;
-      animation: color-change 5s infinite alternate;
-      margin-top: 20px;
-      display: block;
-    }
-    @keyframes color-change {
-      0% {
-        color: #007bff;
-      }
-      100% {
-        color: #ff6347;
-      }
-    }
-    .floating-image {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 100px;
-      height: 100px;
-      background-color: #f8f8f8;
-      border-radius: 50%;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-      overflow: hidden;
-    }
-    .floating-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    @media (max-width: 600px) {
-      .container {
-        padding: 15px;
-      }
-      .logo {
-        max-height: 150px;
-      }
-      .animated-text {
-        font-size: 20px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exif - Image Metadata Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .feature-list {
+            margin: 20px 0;
+            list-style-type: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 10px;
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            border-left: 4px solid #4CAF50;
+        }
+        .code-block {
+            background-color: #333;
+            color: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
 
-<div class="container">
-  <p class="center">
-    <img class="logo" src="https://github.com/AryanVBW/Exif/releases/download/Exif/ExIF-Logo_BackgroundWhite.png" alt="Exif Logo">
-    <span class="animated-text">Exif-Images Edition</span>
-  </p>
-  <hr>
+    <header>
+        <h1>Exif - Image Metadata Tool</h1>
+    </header>
 
-  <h2>Features</h2>
-  <hr>
-  <ul>
-    <li>Extract exif data of images (jpg, jpeg, png).</li>
-    <li>Clear exif data from images.</li>
-    <li>Save data in a text file.</li>
-  </ul>
+    <div class="container">
+        <img src="https://github.com/AryanVBW/Exif/releases/download/Exif/ExIF-Logo_BackgroundWhite.png" alt="Exif Logo" height="200">
 
-  <h2>Supported Formats</h2>
-  <hr>
-  <ul>
-    <li>Images: PNG, JPG, JPEG, GIF, BMP, TIFF</li>
-    <li>Videos: MP4, MKV, AVI, MOV</li>
-    <li>Audio: MP3 (limited support, additional library may be required)</li>
-  </ul>
+        <h2>Features</h2>
+        <ul class="feature-list">
+            <li>Extract EXIF data from images (JPG, JPEG, PNG)</li>
+            <li>Clear EXIF data from images</li>
+            <li>Save EXIF data to a text file</li>
+        </ul>
 
-  <h2>Installation and Usage Instructions</h2>
-  <hr>
-  <ol>
-    <li>Add .jpg to subfolder ./images from where the script is stored.</li>
-    <li>Note: Most social media sites strip exif data from uploaded photos.</li>
-  </ol>
+        <h2>Supported Formats</h2>
+        <ul class="feature-list">
+            <li><strong>Images:</strong> PNG, JPG, JPEG, GIF, BMP, TIFF</li>
+            <li><strong>Videos:</strong> MP4, MKV, AVI, MOV</li>
+            <li><strong>Audio:</strong> MP3 (limited support)</li>
+        </ul>
 
-  <h3>Prerequisites</h3>
-  <hr>
-  <li>Install Python3</li>
-    <ul>
-      <li>Debian, Ubuntu, Etc: <code>sudo apt-get install python3</code></li>
-      <li>Fedora, Oracle, Red Hat, etc: <code>su -c "yum install python"</code></li>
-      <li>Windows: <a href="https://www.python.org/downloads/windows/">Python for Windows</a></li>
-    </ul>
-  </li>
-  <li>Install Pillow (Pillow will not work if you have PIL installed):
-    <pre><code>python3 -m pip install --upgrade pip
-python3 -m pip install --upgrade Pillow
-pip install Pillow moviepy
-pip install eyed3</code></pre>
-  </li>
-
-  <h2>Installation</h2>
-  <hr>
-  <h3>Copy & paste the following commands:</h3>
-  <div class="code-block">
-    <button class="copy-btn" onclick="copyToClipboard('#install-commands')">Copy</button>
-    <pre id="install-commands"><code>git clone https://github.com/AryanVBW/Exif.git
+        <h2>Installation Instructions</h2>
+        <p>Follow these steps to install and run the Exif tool:</p>
+        
+        <div class="code-block">
+            <pre>
+git clone https://github.com/AryanVBW/Exif.git
 cd Exif
-python3 exif-main.py</code></pre>
-  </div>
+python3 exif-main.py
+            </pre>
+        </div>
 
-  <h3>To remove exif data from images, use the following command:</h3>
-  <div class="code-block">
-    <button class="copy-btn" onclick="copyToClipboard('#remove-exif-commands')">Copy</button>
-    <pre id="remove-exif-commands"><code>python3 remove-exif.py</code></pre>
-  </div>
+        <h3>Prerequisites</h3>
+        <div class="code-block">
+            <pre>
+sudo apt-get install python3  # For Debian/Ubuntu
+pip install Pillow moviepy eyed3  # Install required libraries
+            </pre>
+        </div>
 
-  <h2>📸🎥🔍 Direct Use</h2>
-  <hr>
-  <p>Discover the hidden details in your media files effortlessly! Simply run this script and:</p>
-  <ul>
-    <li>🌐 Enter the path to your images, videos, or audio files.</li>
-    <li>💾 Choose where to save the extracted Exif data.</li>
-  </ul>
-  <p>Unearth the metadata magic with style!</p>
+        <h2>Removing EXIF Data</h2>
+        <p>To remove EXIF data from images, use the following command:</p>
+        <div class="code-block">
+            <pre>
+python3 remove-exif.py
+            </pre>
+        </div>
 
-  <h3>Copy and paste this:</h3>
-  <div  class="code-block">
-    
-    <button class="copy-btn" onclick="copyToClipboard('#direct-use-commands')">Copy</button>
-    <pre id="direct-use-commands"><code>git clone https://github.com/AryanVBW/Exif.git
-cd Exif
-python3 exif-raw.py</code></pre>
-  </div>
+        <h2>Direct Use</h2>
+        <p>To use the Exif tool directly for metadata extraction:</p>
+        <div class="code-block">
+            <pre>
+python3 exif-raw.py
+            </pre>
+        </div>
 
-  <h3>Use these commands to print jpg output directly on terminal or PowerShell:</h3>
-  <div class="code-block">
-    <button class="copy-btn" onclick="copyToClipboard('#print-jpg-commands')">Copy</button>
-    <pre id="print-jpg-commands"><code>git clone https://github.com/AryanVBW/Exif.git
-cd Exif
-python3 exif.py</code></pre>
-  </div>
+        <h2>Print EXIF Data</h2>
+        <p>To print EXIF data directly to the terminal for JPG images:</p>
+        <div class="code-block">
+            <pre>
+python3 exif.py
+            </pre>
+        </div>
+    </div>
 
-  <p class="center">
-    Visitor count<br>
-    <img src="https://profile-counter.glitch.me/Aryanvbw/count.svg" />
-  </p>
-</div>
-
-<!-- Floating image -->
-<div class="floating-image">
-  <img src="https://github.com/AryanVBW/Exif/releases/download/Exif/ExIF-Logo_BackgroundWhite.png" alt="Floating Logo">
-</div>
-
-<script>
-  function copyToClipboard(elementId) {
-    var copyText = document.querySelector(elementId).innerText;
-    navigator.clipboard.writeText(copyText).then(function() {
-      var button = document.querySelector('.copy-btn');
-      button.classList.add('copied');
-      setTimeout(function() {
-        button.classList.remove('copied');
-      }, 2000);
-    }, function(err) {
-      console.error('Could not copy text: ', err);
-    });
-  }
-</script>
+    <footer>
+        <p>Visitor count: <img src="https://profile-counter.glitch.me/Aryanvbw/count.svg" alt="Visitor count"></p>
+        <p>© 2024 Exif Metadata Tool</p>
+    </footer>
 
 </body>
 </html>
