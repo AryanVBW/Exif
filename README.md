@@ -68,6 +68,16 @@ git clone https://github.com/AryanVBW/Exif.git
 cd Exif
 python3 exif.py
 ```
+
+### Thank You 🙏
+
+This project was inspired by the incredible YouTube tutorial ”EXIF Data Project in Python”, which provided valuable insights into building an Exif data tool.
+
+A heartfelt thanks to David Bombal for his fantastic exif.py script on GitHub, which served as a guiding resource during development.
+
+To the open-source community, developers, and testers: your support makes this project thrive.
+
+Let’s continue exploring the stories hidden within our media files!
 <p align="center"> 
   Visitor count<br>
   <img src="https://profile-counter.glitch.me/Aryanvbw/count.svg" />
