@@ -71,9 +71,9 @@ python3 exif.py
 
 ### Thank You 🙏
 
-This project was inspired by the incredible YouTube tutorial ”EXIF Data Project in Python”, which provided valuable insights into building an Exif data tool.
+This project was inspired by the incredible YouTube tutorial ”[EXIF Data Project in Python](https://youtu.be/A_itRNhbgZk?si=sHaWhNV9tn4cVwWC)”, which provided valuable insights into building an Exif data tool.
 
-A heartfelt thanks to David Bombal for his fantastic exif.py script on GitHub, which served as a guiding resource during development.
+A heartfelt thanks to David Bombal for his fantastic [exif.py script on GitHub](https://github.com/davidbombal/red-python-scripts/blob/main/exif.py), which served as a guiding resource during development.
 
 To the open-source community, developers, and testers: your support makes this project thrive.
 
