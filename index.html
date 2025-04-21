@@ -4,134 +4,739 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Exif - Image Metadata Tool</title>
+    <title>Exif - Comprehensive Metadata Tool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        :root {
+            --primary-color: #00ff9d;
+            --primary-dark: #00cc7d;
+            --secondary-color: #6c63ff;
+            --text-color: #e0e0e0;
+            --bg-color: #0a0a0a;
+            --card-bg: #151515;
+            --accent-color: #ff00ff;
+            --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            --glass-bg: rgba(21, 21, 21, 0.8);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --code-bg: #1a1a1a;
+            --feature-card-bg: rgba(21, 21, 21, 0.9);
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 255, 157, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(108, 99, 255, 0.1) 0%, transparent 20%);
+            min-height: 100vh;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-logo {
+            height: 40px;
+            width: auto;
+            filter: drop-shadow(0 0 8px rgba(0, 255, 157, 0.3));
+            transition: transform 0.3s ease;
+        }
+
+        .nav-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
         header {
-            background-color: #4CAF50;
-            color: white;
+            background: var(--glass-bg);
+            color: var(--text-color);
+            padding: 8rem 0 4rem;
             text-align: center;
-            padding: 10px 0;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
         }
+
         .container {
-            max-width: 900px;
-            margin: 20px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
         }
-        h1 {
+
+        .hero {
             text-align: center;
+            margin-bottom: 4rem;
         }
-        .feature-list {
-            margin: 20px 0;
-            list-style-type: none;
-            padding: 0;
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.2);
         }
-        .feature-list li {
-            padding: 10px;
-            background-color: #f9f9f9;
-            margin-bottom: 10px;
-            border-left: 4px solid #4CAF50;
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.8);
         }
+
+        .logo-container {
+            text-align: center;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .logo-container img {
+            max-width: 250px;
+            height: auto;
+            filter: drop-shadow(0 0 20px rgba(0, 255, 157, 0.4));
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--glass-border);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 32px rgba(0, 255, 157, 0.1);
+            border-color: rgba(0, 255, 157, 0.3);
+        }
+
+        .card-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-title::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: var(--feature-card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+            color: var(--text-color);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary-color);
+            box-shadow: 0 8px 32px rgba(0, 255, 157, 0.1);
+        }
+
         .code-block {
-            background-color: #333;
-            color: #eee;
-            padding: 10px;
-            border-radius: 5px;
-            font-family: monospace;
+            background: var(--code-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            position: relative;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .code-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--gradient);
+        }
+
+        .code-block pre {
+            margin: 0;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
             overflow-x: auto;
         }
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
+
+        .copy-button {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: rgba(0, 255, 157, 0.1);
+            border: 1px solid rgba(0, 255, 157, 0.2);
+            color: var(--primary-color);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
         }
-        img {
-            display: block;
+
+        .copy-button:hover {
+            background: rgba(0, 255, 157, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .file-type-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .file-type-card {
+            background: var(--feature-card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+            color: var(--text-color);
+        }
+
+        .file-type-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary-color);
+            box-shadow: 0 8px 32px rgba(0, 255, 157, 0.1);
+        }
+
+        .file-type-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            filter: drop-shadow(0 0 5px rgba(0, 255, 157, 0.3));
+        }
+
+        .file-type-title {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .file-type-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .file-type-list li {
+            padding: 0.25rem 0;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        .gui-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .gui-feature-card {
+            background: var(--feature-card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+            color: var(--text-color);
+        }
+
+        .gui-feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 8px 32px rgba(0, 255, 157, 0.1);
+        }
+
+        .gui-feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .gui-feature-title {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .gui-feature-description {
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin: 4rem 0;
+            padding: 4rem 0;
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--gradient);
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 16px rgba(0, 255, 157, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0, 255, 157, 0.3);
+        }
+
+        footer {
+            background: var(--card-bg);
+            color: var(--text-color);
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .footer-content {
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .social-link {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .nav-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+        }
+
+        .cli-section {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cli-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .cli-feature {
+            background: var(--feature-card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--glass-border);
+            color: var(--text-color);
+        }
+        
+        .cli-feature h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .cli-feature ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .cli-feature li {
+            color: var(--text-color);
+        }
+        
+        .code-block {
+            background: var(--code-bg);
+            color: var(--text-color);
+            padding: 1rem;
+            border-radius: 5px;
+            font-family: monospace;
+            margin: 1rem 0;
+            position: relative;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .copy-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: rgba(0, 255, 157, 0.1);
+            color: var(--primary-color);
+            border: 1px solid rgba(0, 255, 157, 0.2);
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+        
+        .copy-btn:hover {
+            background: rgba(0, 255, 157, 0.2);
+            transform: translateY(-1px);
+        }
+        
+        .file-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .file-type {
+            background: var(--feature-card-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--glass-border);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+        
+        .file-type:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .file-type i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
         }
     </style>
 </head>
 <body>
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="nav-logo-container">
+                <img src="https://github.com/AryanVBW/Exif/releases/download/Exif/ExIF-Logo_BackgroundWhite.png" 
+                     alt="Exif Logo" class="nav-logo">
+            </div>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#installation" class="nav-link">Installation</a>
+                <a href="#cli" class="nav-link">CLI Tool</a>
+                <a href="#gui" class="nav-link">GUI</a>
+            </div>
+        </div>
+    </nav>
 
     <header>
-        <h1>Exif - Image Metadata Tool</h1>
+        <div class="container">
+            <div class="hero">
+                <h1>Exif - Comprehensive Metadata Tool</h1>
+                <p>Extract, view, and manage metadata from images, videos, audio files, and documents</p>
+            </div>
+            <div class="logo-container">
+                <img src="https://github.com/AryanVBW/Exif/releases/download/Exif/ExIF-Logo_BackgroundWhite.png" alt="Exif Logo">
+            </div>
+        </div>
     </header>
 
     <div class="container">
-        <img src="https://github.com/AryanVBW/Exif/releases/download/Exif/ExIF-Logo_BackgroundWhite.png" alt="Exif Logo" height="200">
+        <section id="features" class="card">
+            <div class="card-title">
+                <h2>Features</h2>
+            </div>
+            <div class="file-type-grid">
+                <div class="file-type-card">
+                    <i class="fas fa-image file-type-icon"></i>
+                    <h3 class="file-type-title">Images</h3>
+                    <ul class="file-type-list">
+                        <li>JPG/JPEG</li>
+                        <li>PNG</li>
+                        <li>GIF</li>
+                        <li>BMP</li>
+                        <li>TIFF</li>
+                    </ul>
+                </div>
+                <div class="file-type-card">
+                    <i class="fas fa-video file-type-icon"></i>
+                    <h3 class="file-type-title">Videos</h3>
+                    <ul class="file-type-list">
+                        <li>MP4</li>
+                        <li>AVI</li>
+                        <li>MOV</li>
+                        <li>MKV</li>
+                    </ul>
+                </div>
+                <div class="file-type-card">
+                    <i class="fas fa-music file-type-icon"></i>
+                    <h3 class="file-type-title">Audio</h3>
+                    <ul class="file-type-list">
+                        <li>MP3</li>
+                        <li>WAV</li>
+                        <li>FLAC</li>
+                    </ul>
+                </div>
+                <div class="file-type-card">
+                    <i class="fas fa-file-alt file-type-icon"></i>
+                    <h3 class="file-type-title">Documents</h3>
+                    <ul class="file-type-list">
+                        <li>PDF</li>
+                        <li>DOC/DOCX</li>
+                        <li>TXT</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-        <h2>Features</h2>
-        <ul class="feature-list">
-            <li>Extract EXIF data from images (JPG, JPEG, PNG)</li>
-            <li>Clear EXIF data from images</li>
-            <li>Save EXIF data to a text file</li>
-        </ul>
+        <section id="gui" class="card">
+            <h2>GUI Application</h2>
+            <div class="gui-features">
+                <div class="gui-feature-card">
+                    <i class="fas fa-magic gui-feature-icon"></i>
+                    <h3 class="gui-feature-title">Auto Detection</h3>
+                    <p class="gui-feature-description">Automatically detect file types and extract relevant metadata.</p>
+                </div>
+                <div class="gui-feature-card">
+                    <i class="fas fa-save gui-feature-icon"></i>
+                    <h3 class="gui-feature-title">Save Options</h3>
+                    <p class="gui-feature-description">Save metadata in JSON or text format for easy documentation.</p>
+                </div>
+                <div class="gui-feature-card">
+                    <i class="fas fa-eye gui-feature-icon"></i>
+                    <h3 class="gui-feature-title">Detailed View</h3>
+                    <p class="gui-feature-description">View all metadata in a clean, organized interface.</p>
+                </div>
+            </div>
+        </section>
 
-        <h2>Supported Formats</h2>
-        <ul class="feature-list">
-            <li><strong>Images:</strong> PNG, JPG, JPEG, GIF, BMP, TIFF</li>
-            <li><strong>Videos:</strong> MP4, MKV, AVI, MOV</li>
-            <li><strong>Audio:</strong> MP3 (limited support)</li>
-        </ul>
+        <section id="cli" class="cli-section">
+            <h2>Command Line Interface</h2>
+            <p>Powerful CLI tool for extracting metadata from any file type</p>
+            
+            <div class="cli-features">
+                <div class="cli-feature">
+                    <h3>Basic Usage</h3>
+                    <ul>
+                        <li>Extract metadata from any file</li>
+                        <li>Auto-detect file type</li>
+                        <li>View detailed information</li>
+                    </ul>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <code>python exif-cli.py path/to/your/file</code>
+                    </div>
+                </div>
+                
+                <div class="cli-feature">
+                    <h3>Advanced Options</h3>
+                    <ul>
+                        <li>JSON output format</li>
+                        <li>Save metadata to file</li>
+                        <li>Google Maps integration</li>
+                    </ul>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        <code>python exif-cli.py path/to/your/file --format json --save metadata.json --open-maps</code>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <h2>Installation Instructions</h2>
-        <p>Follow these steps to install and run the Exif tool:</p>
-        
-        <div class="code-block">
-            <pre>
-git clone https://github.com/AryanVBW/Exif.git
-cd Exif
-python3 exif-main.py
-            </pre>
-        </div>
+        <section id="installation" class="card">
+            <div class="card-title">
+                <h2>Installation</h2>
+            </div>
+            <p>Install the required dependencies:</p>
+            <div class="code-block">
+                <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                <pre>pip install -r requirements.txt</pre>
+            </div>
+        </section>
 
-        <h3>Prerequisites</h3>
-        <div class="code-block">
-            <pre>
-sudo apt-get install python3  # For Debian/Ubuntu
-pip install Pillow moviepy eyed3  # Install required libraries
-            </pre>
-        </div>
+        <section id="usage" class="card">
+            <div class="card-title">
+                <h2>Usage</h2>
+            </div>
+            
+            <h3>Command Line</h3>
+            <div class="code-block">
+                <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                <pre>python3 exif.py</pre>
+            </div>
 
-        <h2>Removing EXIF Data</h2>
-        <p>To remove EXIF data from images, use the following command:</p>
-        <div class="code-block">
-            <pre>
-python3 remove-exif.py
-            </pre>
-        </div>
+            <h3>GUI Application</h3>
+            <div class="code-block">
+                <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                <pre>python exif-gui.py</pre>
+            </div>
+        </section>
 
-        <h2>Direct Use</h2>
-        <p>To use the Exif tool directly for metadata extraction:</p>
-        <div class="code-block">
-            <pre>
-python3 exif-raw.py
-            </pre>
-        </div>
-
-        <h2>Print EXIF Data</h2>
-        <p>To print EXIF data directly to the terminal for JPG images:</p>
-        <div class="code-block">
-            <pre>
-python3 exif.py
-            </pre>
-        </div>
+        <section class="cta-section">
+            <h2>Ready to Get Started?</h2>
+            <p>Download Exif now and start managing your media metadata with ease.</p>
+            <a href="https://github.com/AryanVBW/Exif" class="cta-button">Download on GitHub</a>
+        </section>
     </div>
 
     <footer>
-        <p>Visitor count: <img src="https://profile-counter.glitch.me/Aryanvbw/count.svg" alt="Visitor count"></p>
-        <p>© 2024 Exif Metadata Tool</p>
+        <div class="footer-content">
+            <div class="visitor-count">
+                <p>Visitor count: <img src="https://profile-counter.glitch.me/Aryanvbw/count.svg" alt="Visitor count"></p>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/AryanVBW" class="social-link">GitHub</a>
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">LinkedIn</a>
+            </div>
+            <p>© 2024 Exif Metadata Tool. All rights reserved.</p>
+        </div>
     </footer>
 
+    <script>
+        function copyCode(button) {
+            const codeBlock = button.nextElementSibling;
+            const text = codeBlock.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.style.background = 'rgba(0, 255, 157, 0.3)';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = 'rgba(0, 255, 157, 0.1)';
+                }, 2000);
+            });
+        }
+    </script>
 </body>
 </html>

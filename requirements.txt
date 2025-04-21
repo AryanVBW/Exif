@@ -1,0 +1,5 @@
+Pillow>=9.0.0
+exifread>=3.0.0
+moviepy>=1.0.3
+eyed3>=0.9.7
+python-magic>=0.4.27 
