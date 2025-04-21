@@ -7,6 +7,18 @@
 ## Overview
 Exif is a powerful metadata extraction tool that supports multiple file types including images, videos, audio files, and documents. It provides both a modern GUI interface and a comprehensive CLI tool for extracting detailed metadata from your files.
 
+## GUI Application Screenshots
+
+### Main Interface
+<p align="center">
+  <img src="images/screenshot.png" alt="Exif GUI Main Interface" width="800">
+</p>
+
+### Document Metadata View
+<p align="center">
+  <img src="images/screenshot_pdf.png" alt="Exif GUI PDF Metadata" width="800">
+</p>
+
 ## Features
 
 ### 🖼️ Image Support

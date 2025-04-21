@@ -199,27 +199,100 @@
             border-radius: 2px;
         }
 
-        .feature-grid {
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin: 2rem 0;
+            margin: 4rem 0;
         }
 
         .feature-card {
             background: var(--feature-card-bg);
-            padding: 1.5rem;
-            border-radius: 12px;
+            border-radius: 16px;
+            padding: 2rem;
             border: 1px solid var(--glass-border);
             transition: all 0.3s ease;
-            color: var(--text-color);
+            position: relative;
+            overflow: hidden;
         }
 
         .feature-card:hover {
-            transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
             border-color: var(--primary-color);
             box-shadow: 0 8px 32px rgba(0, 255, 157, 0.1);
+        }
+
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-card ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .feature-card li {
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-card li::before {
+            content: '→';
+            color: var(--primary-color);
+        }
+
+        .gui-preview {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 4rem 0;
+            border: 1px solid var(--glass-border);
+            position: relative;
+        }
+
+        .gui-preview h2 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+        }
+
+        .gui-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .gui-feature {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .gui-feature:hover {
+            transform: translateY(-5px);
+            background: rgba(0, 255, 157, 0.1);
+        }
+
+        .gui-feature i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .gui-feature h3 {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            font-family: 'Orbitron', sans-serif;
         }
 
         .code-block {
@@ -311,45 +384,6 @@
 
         .file-type-list li {
             padding: 0.25rem 0;
-            color: var(--text-color);
-            opacity: 0.8;
-        }
-
-        .gui-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .gui-feature-card {
-            background: var(--feature-card-bg);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--glass-border);
-            transition: all 0.3s ease;
-            color: var(--text-color);
-        }
-
-        .gui-feature-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-color);
-            box-shadow: 0 8px 32px rgba(0, 255, 157, 0.1);
-        }
-
-        .gui-feature-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .gui-feature-title {
-            font-family: 'Orbitron', sans-serif;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .gui-feature-description {
             color: var(--text-color);
             opacity: 0.8;
         }
@@ -539,6 +573,56 @@
             color: var(--primary-color);
             margin-bottom: 0.5rem;
         }
+
+        .screenshot-showcase {
+            margin: 4rem 0;
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .screenshot-showcase h2 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .screenshot-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .screenshot-item {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .screenshot-item h3 {
+            color: var(--primary-color);
+            margin: 1rem 0;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .screenshot-item p {
+            color: var(--text-color);
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
@@ -551,8 +635,8 @@
             <div class="nav-links">
                 <a href="#features" class="nav-link">Features</a>
                 <a href="#installation" class="nav-link">Installation</a>
+                <a href="#gui" class="nav-link">GUI Tool</a>
                 <a href="#cli" class="nav-link">CLI Tool</a>
-                <a href="#gui" class="nav-link">GUI</a>
             </div>
         </div>
     </nav>
@@ -560,8 +644,8 @@
     <header>
         <div class="container">
             <div class="hero">
-                <h1>Exif - Comprehensive Metadata Tool</h1>
-                <p>Extract, view, and manage metadata from images, videos, audio files, and documents</p>
+                <h1>Exif Metadata Extractor</h1>
+                <p>A powerful tool for extracting metadata from images, videos, audio files, and documents with a modern GUI interface.</p>
             </div>
             <div class="logo-container">
                 <img src="https://github.com/AryanVBW/Exif/releases/download/Exif/ExIF-Logo_BackgroundWhite.png" alt="Exif Logo">
@@ -569,71 +653,103 @@
         </div>
     </header>
 
-    <div class="container">
-        <section id="features" class="card">
-            <div class="card-title">
-                <h2>Features</h2>
+    <main class="container">
+        <section id="features" class="features-grid">
+            <div class="feature-card">
+                <h3><i class="fas fa-image"></i> Image Support</h3>
+                <ul>
+                    <li>Extract EXIF data from multiple formats</li>
+                    <li>View camera information and settings</li>
+                    <li>Access GPS coordinates and location data</li>
+                    <li>Analyze image properties and timestamps</li>
+                </ul>
             </div>
-            <div class="file-type-grid">
-                <div class="file-type-card">
-                    <i class="fas fa-image file-type-icon"></i>
-                    <h3 class="file-type-title">Images</h3>
-                    <ul class="file-type-list">
-                        <li>JPG/JPEG</li>
-                        <li>PNG</li>
-                        <li>GIF</li>
-                        <li>BMP</li>
-                        <li>TIFF</li>
-                    </ul>
+
+            <div class="feature-card">
+                <h3><i class="fas fa-video"></i> Video Support</h3>
+                <ul>
+                    <li>Extract video metadata and properties</li>
+                    <li>Get frame rate and resolution details</li>
+                    <li>Analyze audio stream information</li>
+                    <li>View technical specifications</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3><i class="fas fa-music"></i> Audio Support</h3>
+                <ul>
+                    <li>Extract ID3 tags and properties</li>
+                    <li>View artist and album information</li>
+                    <li>Access genre and year data</li>
+                    <li>Analyze technical details</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3><i class="fas fa-file-alt"></i> Document Support</h3>
+                <ul>
+                    <li>Extract PDF metadata and properties</li>
+                    <li>Read DOCX document information</li>
+                    <li>View creation and modification dates</li>
+                    <li>Track document authors</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="screenshot-showcase">
+            <h2>GUI Application Preview</h2>
+            <div class="screenshot-container">
+                <div class="screenshot-item">
+                    <img src="images/screenshot.png" alt="Exif GUI Main Interface">
+                    <h3>Main Application Interface</h3>
+                    <p>Modern dark theme interface with structured metadata display and easy file selection.</p>
                 </div>
-                <div class="file-type-card">
-                    <i class="fas fa-video file-type-icon"></i>
-                    <h3 class="file-type-title">Videos</h3>
-                    <ul class="file-type-list">
-                        <li>MP4</li>
-                        <li>AVI</li>
-                        <li>MOV</li>
-                        <li>MKV</li>
-                    </ul>
-                </div>
-                <div class="file-type-card">
-                    <i class="fas fa-music file-type-icon"></i>
-                    <h3 class="file-type-title">Audio</h3>
-                    <ul class="file-type-list">
-                        <li>MP3</li>
-                        <li>WAV</li>
-                        <li>FLAC</li>
-                    </ul>
-                </div>
-                <div class="file-type-card">
-                    <i class="fas fa-file-alt file-type-icon"></i>
-                    <h3 class="file-type-title">Documents</h3>
-                    <ul class="file-type-list">
-                        <li>PDF</li>
-                        <li>DOC/DOCX</li>
-                        <li>TXT</li>
-                    </ul>
+                
+                <div class="screenshot-item">
+                    <img src="images/screenshot_pdf.png" alt="Exif GUI PDF Metadata">
+                    <h3>Document Metadata View</h3>
+                    <p>Detailed metadata extraction from PDF documents with organized category display.</p>
                 </div>
             </div>
         </section>
 
-        <section id="gui" class="card">
-            <h2>GUI Application</h2>
+        <section id="gui" class="gui-preview">
+            <h2>Modern GUI Application</h2>
             <div class="gui-features">
-                <div class="gui-feature-card">
-                    <i class="fas fa-magic gui-feature-icon"></i>
-                    <h3 class="gui-feature-title">Auto Detection</h3>
-                    <p class="gui-feature-description">Automatically detect file types and extract relevant metadata.</p>
+                <div class="gui-feature">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Modern Design</h3>
+                    <p>Dark theme interface with professional styling</p>
                 </div>
-                <div class="gui-feature-card">
-                    <i class="fas fa-save gui-feature-icon"></i>
-                    <h3 class="gui-feature-title">Save Options</h3>
-                    <p class="gui-feature-description">Save metadata in JSON or text format for easy documentation.</p>
+
+                <div class="gui-feature">
+                    <i class="fas fa-magic"></i>
+                    <h3>Auto-Detection</h3>
+                    <p>Automatic file type detection and analysis</p>
                 </div>
-                <div class="gui-feature-card">
-                    <i class="fas fa-eye gui-feature-icon"></i>
-                    <h3 class="gui-feature-title">Detailed View</h3>
-                    <p class="gui-feature-description">View all metadata in a clean, organized interface.</p>
+
+                <div class="gui-feature">
+                    <i class="fas fa-table"></i>
+                    <h3>Structured Display</h3>
+                    <p>Organized metadata in categories</p>
+                </div>
+
+                <div class="gui-feature">
+                    <i class="fas fa-save"></i>
+                    <h3>Export Options</h3>
+                    <p>Save metadata as JSON or text files</p>
+                </div>
+
+                <div class="gui-feature">
+                    <i class="fas fa-folder-open"></i>
+                    <h3>File Browser</h3>
+                    <p>Easy file selection and management</p>
+                </div>
+
+                <div class="gui-feature">
+                    <i class="fas fa-sync"></i>
+                    <h3>Quick Reset</h3>
+                    <p>Clear and reset functionality</p>
                 </div>
             </div>
         </section>
@@ -705,7 +821,7 @@
             <p>Download Exif now and start managing your media metadata with ease.</p>
             <a href="https://github.com/AryanVBW/Exif" class="cta-button">Download on GitHub</a>
         </section>
-    </div>
+    </main>
 
     <footer>
         <div class="footer-content">
