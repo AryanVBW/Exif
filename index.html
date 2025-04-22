@@ -72,6 +72,42 @@
             width: auto;
             filter: drop-shadow(0 0 8px rgba(0, 255, 157, 0.3));
             transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .nav-logo::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: var(--primary-color);
+            z-index: -1;
+            border-radius: 4px;
+            animation: electricPulse 2s infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes electricPulse {
+            0% {
+                box-shadow: 0 0 5px var(--primary-color),
+                           0 0 10px var(--primary-color),
+                           0 0 15px var(--primary-color);
+                opacity: 0.3;
+            }
+            50% {
+                box-shadow: 0 0 10px var(--primary-color),
+                           0 0 20px var(--primary-color),
+                           0 0 30px var(--primary-color);
+                opacity: 0.6;
+            }
+            100% {
+                box-shadow: 0 0 5px var(--primary-color),
+                           0 0 10px var(--primary-color),
+                           0 0 15px var(--primary-color);
+                opacity: 0.3;
+            }
         }
 
         .nav-logo:hover {
@@ -830,8 +866,8 @@
             </div>
             <div class="social-links">
                 <a href="https://github.com/AryanVBW" class="social-link">GitHub</a>
-                <a href="#" class="social-link">Twitter</a>
-                <a href="#" class="social-link">LinkedIn</a>
+                <a href="https://x.com/vivekwagadare" class="social-link">Twitter</a>
+                <a href="https://www.linkedin.com/in/vivek-wagadare-b677a9216/" class="social-link">LinkedIn</a>
             </div>
             <p>© 2024 Exif Metadata Tool. All rights reserved.</p>
         </div>
